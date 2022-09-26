@@ -1,45 +1,53 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
+      <header>
+        <h2 className="title">HOXTALIZING</h2>
+        <ul>
+          <li>BOOKMARKS</li>
+          <li>PROFILE</li> 
+          <li>LOGOUT</li>
+          <li className="contact-us">CONTACT US</li>
+        </ul>
       </header>
+      <main>
+        <form className="create-post">
+          <p>SHARE YOUR THOUGHTS WITH YOUR FRIENDS</p>
+          <textarea placeholder="What are you thinking?"></textarea>
+          <input placeholder="Add an image url"></input>
+          <button>Add a post</button>
+        </form>
+        <div className='feed'>
+        <div className="post">
+          <div className="user-profile">
+            <img src="https://images.pexels.com/photos/13646190/pexels-photo-13646190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+            <h3>user name here</h3>
+          </div>
+          <p>Here goes all the content that this user wrote</p>
+          <img
+            className="post-image"
+            src="https://images.pexels.com/photos/13636706/pexels-photo-13636706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          ></img>
+        </div>
+        <div className="post">
+          <div className="user-profile">
+            <img src="https://images.pexels.com/photos/13646190/pexels-photo-13646190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+            <h3>user name here</h3>
+          </div>
+          <p>Here goes all the content that this user wrote</p>
+          <img
+            className="post-image"
+            src="https://images.pexels.com/photos/13636706/pexels-photo-13636706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          ></img>
+        </div>
+        </div>
+       
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
