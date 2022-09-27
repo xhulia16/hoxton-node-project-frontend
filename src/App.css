@@ -6,32 +6,34 @@
 }
 
 .App {
-  background-color: #f9c5bd;
+background-image: url("https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   min-height: 100vh;
+
  
 }
 
 button {
-  background-color: #fdd5cf;
-  width: 70px;
-  height: 20px;
-  border: none;
+  background-color: rgb(250, 137, 8);
+  border: 1px solid black;
+  padding: 5px;
+  
 }
 
 /* header */
 
 header {
+  color: white;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
-  background-color: #9bc400;
+  background-color:rgb(41, 50, 77);
   padding-left: 50px;
   height: 50px;
   position: fixed;
   width: 100%;
   top: 0;
-  /* border-bottom: black solid 0.5px; */
+  border: black solid 0.5px; 
 }
 
 header ul{
@@ -49,7 +51,7 @@ header ul{
 }
 
 .contact-us{
-  background-color: #c5f02a;
+  background-color: rgb(58, 75, 126);
   padding: 5px;
   border-radius: 12px; 
 }
@@ -70,7 +72,10 @@ justify-content: right;
   gap: 15px; 
   position: fixed;
   left: 70px; 
-  top:30%;
+  top:20%;
+  background-color:white;
+  border: 1px solid #353d1688;
+  padding: 50px;
 }
 
 .create-post p{
@@ -92,7 +97,7 @@ textarea{
 
 .feed{
 padding-top: 70px;
-padding-right: 100px;
+padding-right: 70px;
 height: 550px;
 overflow-y: scroll;
 
@@ -116,13 +121,20 @@ overflow-y: scroll;
   grid-auto-flow: column;
   justify-content: left;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #353d1688;
 }
 
 .post{
   display: grid;
   gap: 10px;
-  padding-bottom: 40px;
+  padding: 20px;
+  border-left: 0.5px solid #353d1688;
+  border-right: 0.5px solid #353d1688;
+  border-top: 0.5px solid #353d1688;
+  background-color: white;
+  margin-bottom: 30px;
 }
 
 .post p {
