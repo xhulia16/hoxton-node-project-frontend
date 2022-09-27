@@ -93,8 +93,9 @@ textarea{
 .feed{
 padding-top: 70px;
 padding-right: 100px;
-height: 700px;
+height: 550px;
 overflow-y: scroll;
+
 }
 
 .user-profile img {
@@ -121,6 +122,11 @@ overflow-y: scroll;
 .post{
   display: grid;
   gap: 10px;
+  padding-bottom: 40px;
+}
+
+.post p {
+width: 500px; 
 }
 
 /* width */
