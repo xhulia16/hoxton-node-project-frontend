@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 .App {
   background-color: #f9c5bd;
   min-height: 100vh;
+ 
 }
 
 button {
@@ -56,7 +58,6 @@ header ul{
 /* main */
 
 main{
-padding-top: 70px; 
 display: grid;
 grid-auto-flow: column;
 align-items: center;
@@ -68,10 +69,13 @@ justify-content: right;
   width: 350px;
   gap: 15px; 
   position: fixed;
-  left: 50px; 
+  left: 70px; 
   top:30%;
 }
 
+.create-post p{
+  font-size: 28px;
+}
 
 textarea{
   width: 100%;
@@ -87,7 +91,10 @@ textarea{
 /* feed */
 
 .feed{
-padding-right: 80px;
+padding-top: 70px;
+padding-right: 100px;
+height: 700px;
+overflow-y: scroll;
 }
 
 .user-profile img {
@@ -101,4 +108,31 @@ padding-right: 80px;
   width: 500px;
   height: 400px;
   object-fit: cover;
+}
+
+.user-profile{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+
+.post{
+  display: grid;
+  gap: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fdd5cf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #db8a7e;
 }

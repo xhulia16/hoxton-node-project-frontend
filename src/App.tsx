@@ -1,25 +1,14 @@
 import { useState } from "react";
 import "./App.css";
+import { CreatePostForm } from "./components/CreatePostForm";
+import { Header } from "./components/header";
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <h2 className="title">HOXTALIZING</h2>
-        <ul>
-          <li>BOOKMARKS</li>
-          <li>PROFILE</li> 
-          <li>LOGOUT</li>
-          <li className="contact-us">CONTACT US</li>
-        </ul>
-      </header>
+     <Header></Header>
       <main>
-        <form className="create-post">
-          <p>SHARE YOUR THOUGHTS WITH YOUR FRIENDS</p>
-          <textarea placeholder="What are you thinking?"></textarea>
-          <input placeholder="Add an image url"></input>
-          <button>Add a post</button>
-        </form>
+      <CreatePostForm></CreatePostForm>
         <div className='feed'>
         <div className="post">
           <div className="user-profile">
