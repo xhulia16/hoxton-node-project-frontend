@@ -14,6 +14,7 @@ type User = {
 type Post = {
   id: number;
   name: string;
+  content: string;
   image: string;
   password: string;
   posts: Post[];
