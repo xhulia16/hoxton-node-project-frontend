@@ -167,3 +167,26 @@ a{
   width: 80px;
   justify-self: center;
 }
+
+.feed a{
+  color: black;
+}
+
+.singlePost{
+  margin-top: 0%;
+  display: grid;
+ grid-auto-flow: column;
+ justify-content: center;
+ width: fit-content;
+ align-items: flex-start;
+ align-content: flex-start;
+ gap: 60px;
+}
+
+.post-stats{
+  background-color: white;
+  height: 480px;
+  width: 300px;
+  justify-content: left;
+  
+}

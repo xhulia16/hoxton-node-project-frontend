@@ -6,6 +6,7 @@ import { SignIn } from "./pages/SignInPage";
 import { MainPage } from "./pages/MainPage";
 import { PageNotFound } from "./pages/PageNotFound";
 import { SignUp } from "./pages/SignUpPage";
+import { SinglePost } from "./pages/SinglePost";
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   function signInUser(data: any){
     setCurrentUser(data.user)
     localStorage.token=data.token
-    navigate("/home")
+    // navigate('/home')
   }
 
   function signOutUser(){
@@ -53,7 +54,7 @@ function App() {
      <Route path='/home' element={<MainPage currentUser={currentUser}/>} />
      <Route path='/signIn' element={<SignIn signInUser={signInUser}/>} />
      <Route path='/signUp' element={<SignUp signInUser={signInUser} />} />
-     {/* <Route path='/home/:itemId' element={<SinglePost />} /> */}
+     <Route path='/home/:itemId' element={<SinglePost />} />
      <Route path='*' element={<PageNotFound />} />
      </Routes>
      </section>

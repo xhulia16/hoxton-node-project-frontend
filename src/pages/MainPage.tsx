@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { CreatePostForm } from "../components/CreatePostForm";
 import { Post } from "../types";
 
@@ -18,6 +19,7 @@ export function MainPage({currentUser}) {
       <CreatePostForm setPosts={setPosts} currentUser={currentUser}></CreatePostForm>
       <div className="feed">
         {posts.reverse().map((item) => (
+          <Link to={`/home/${item.id}`}>
           <div className="post">
             <div className="user-profile">
               <img src={item.user.image}></img>
@@ -26,6 +28,7 @@ export function MainPage({currentUser}) {
             <p>{item.content}</p>
             <img className="post-image" src={item.image}></img>
           </div>
+          </Link>
         ))}
         <p>You have reached the end of the posts, congratulations on having few friends!</p>
       </div>
