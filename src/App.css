@@ -58,20 +58,21 @@ header ul {
 main {
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
-  justify-content: right;
+  align-items: top;
+  justify-content: center;
+  gap: 70px;
 }
 
-.create-post {
+form {
   display: grid;
   width: 350px;
   gap: 15px;
-  position: fixed;
-  left: 70px;
-  top: 20%;
   background-color: white;
   border: 1px solid #353d1688;
-  padding: 50px;
+  padding: 20px;
+  text-align: center;
+  height: fit-content;
+  margin-top: 60px;
 }
 
 .create-post p {
@@ -92,8 +93,6 @@ textarea {
 /* feed */
 
 .feed {
-  padding-top: 70px;
-  padding-right: 70px;
   height: 550px;
   overflow-y: scroll;
 }
@@ -106,9 +105,10 @@ textarea {
 }
 
 .post-image {
-  width: 500px;
-  height: 400px;
+  width: 450px;
+  height: 350px;
   object-fit: cover;
+  /* justify-self: center; */
 }
 
 .user-profile {
@@ -130,10 +130,11 @@ textarea {
   border-top: 0.5px solid #353d1688;
   background-color: white;
   margin-bottom: 30px;
+  justify-content: center;
 }
 
 .post p {
-  width: 500px;
+  width: 450px;
 }
 
 /* width */
@@ -143,18 +144,26 @@ textarea {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fdd5cf;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #db8a7e;
+  background: rgb(58, 75, 126);
 }
 
 section {
   margin-top: 70px;
+  display: grid;
+  justify-content: center;
 }
 
 a{
   text-decoration: none;
   color: white; 
+}
+
+/* sign in form */
+.sign-in button{
+  width: 80px;
+  justify-self: center;
 }

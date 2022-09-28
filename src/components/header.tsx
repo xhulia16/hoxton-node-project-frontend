@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 export function Header({currentUser, signOutUser}){
     return(
         <header>
+          <Link to="/home">
         <h2 className="title">HOXTALIZING</h2>
+        </Link>
         <ul>
           <li>BOOKMARKS</li>
           <li>PROFILE</li> 

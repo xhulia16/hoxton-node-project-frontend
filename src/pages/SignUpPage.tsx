@@ -1,6 +1,6 @@
 export function SignUp({signInUser}) {
   return (
-    <form
+    <form className="sign-in"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -27,7 +27,7 @@ export function SignUp({signInUser}) {
 
         console.log(user);
       }}
-    >
+    > <h2> Please enter your details to sign up</h2>
       <input name="name" placeholder="insert your full name" required></input>
       <input name="email" placeholder="insert your email" required></input>
       <input

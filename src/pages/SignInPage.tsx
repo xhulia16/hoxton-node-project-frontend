@@ -1,6 +1,6 @@
 export function SignIn({ signInUser }) {
   return (
-    <form
+    <form className="sign-in"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -28,6 +28,7 @@ export function SignIn({ signInUser }) {
         console.log(user);
       }}
     >
+      <h2>Please enter your credentials</h2>
       <input name="email" placeholder="enter your email..." required></input>
       <input
         type="password"

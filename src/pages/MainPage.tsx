@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { CreatePostForm } from "../components/CreatePostForm";
 import { Post } from "../types";
 
-export function MainPage() {
+export function MainPage({currentUser}) {
   const [posts, setPosts] = useState<Post[]>([]);
   useEffect(() => {
     fetch("http://localhost:5126/posts")
@@ -12,7 +12,7 @@ export function MainPage() {
 
   return (
     <main>
-      <CreatePostForm></CreatePostForm>
+      <CreatePostForm currentUser={currentUser}></CreatePostForm>
       <div className="feed">
         {posts.map((item) => (
           <div className="post">
