@@ -1,6 +1,41 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+type User = {
+  id: number;
+  name: string;
+  image: string;
+  password: string;
+  posts: Post[];
+  comments: Comment[];
+  likes: number;
+};
+
+type Post = {
+  id: number;
+  name: string;
+  image: string;
+  password: string;
+  posts: Post[];
+  comments: Comment[];
+  likes: Likes[];
+};
+
+type Comment = {
+  id: number;
+  comment: Comment[];
+  user: User[];
+  post: Post[];
+  userId: number;
+  postId: number;
+};
+type Likes = {
+  id: number;
+  user: User[];
+  userId: number;
+  postId: number;
+};
+
 export function SinglePost() {
   const [singlePost, setSinglePost] = useState(null);
   const params = useParams();
@@ -29,10 +64,12 @@ export function SinglePost() {
       <div className="post-stats">
         <button>❤️</button>
         <p>{singlePost.likes.length}</p>
-        <ul> Comments: 
-            {singlePost.comments.reverse().map(item=>(
-                <li>{item.comment}</li>
-            ))}
+        <ul>
+          {" "}
+          Comments:
+          {singlePost.comments.reverse().map((item) => (
+            <li>{item.comment}</li>
+          ))}
         </ul>
       </div>
     </section>
