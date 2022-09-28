@@ -37,6 +37,8 @@ type Likes = {
   postId: number;
 };
 
+//  kam pershtypjen se na duhet nje state users, por nk po e ebej se nk e di ca ideje ke ti, se pavaersisht se i bera types dalin me te kuqe
+
 export function SinglePost() {
   const [singlePost, setSinglePost] = useState(null);
   const params = useParams();
@@ -63,7 +65,19 @@ export function SinglePost() {
         </div>
       </div>
       <div className="post-stats">
-        <button>❤️</button>
+        <button
+          onClick={() => {
+            fetch(`http://localhost:5126/likes`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ postId: post.id }),
+            }).then(() => {});
+          }}
+        >
+          ❤️
+        </button>
         <p>{singlePost.likes.length}</p>
         <ul>
           {" "}
