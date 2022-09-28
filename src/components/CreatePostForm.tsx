@@ -1,4 +1,4 @@
-export function CreatePostForm({currentUser}){
+export function CreatePostForm({currentUser, setPosts}){
   if(currentUser===null)
   return <h1>loading...</h1>
     return(
@@ -15,6 +15,8 @@ export function CreatePostForm({currentUser}){
               userId: currentUser.id
             })
           })
+          .then(resp=>resp.json())
+          .then(data=>setPosts(data));
 
           event.target.reset()
         }}>

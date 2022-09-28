@@ -15,9 +15,9 @@ export function MainPage({currentUser}) {
 
   return (
     <main>
-      <CreatePostForm currentUser={currentUser}></CreatePostForm>
+      <CreatePostForm setPosts={setPosts} currentUser={currentUser}></CreatePostForm>
       <div className="feed">
-        {posts.map((item) => (
+        {posts.reverse().map((item) => (
           <div className="post">
             <div className="user-profile">
               <img src={item.user.image}></img>
