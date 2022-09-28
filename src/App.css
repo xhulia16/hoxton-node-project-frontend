@@ -6,17 +6,14 @@
 }
 
 .App {
-background-image: url("https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   min-height: 100vh;
-
- 
 }
 
 button {
   background-color: rgb(250, 137, 8);
   border: 1px solid black;
   padding: 5px;
-  
 }
 
 /* header */
@@ -27,62 +24,61 @@ header {
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
-  background-color:rgb(41, 50, 77);
+  background-color: rgb(41, 50, 77);
   padding-left: 50px;
   height: 50px;
   position: fixed;
   width: 100%;
   top: 0;
-  border: black solid 0.5px; 
+  border: black solid 0.5px;
 }
 
-header ul{
+header ul {
   list-style: none;
   display: grid;
   grid-auto-flow: column;
   justify-content: right;
   padding-right: 50px;
-  gap: 20px; 
+  gap: 20px;
   align-items: center;
 }
 
-.title{
+.title {
   font-weight: 300;
 }
 
-.contact-us{
+.contact-us {
   background-color: rgb(58, 75, 126);
   padding: 5px;
-  border-radius: 12px; 
+  border-radius: 12px;
 }
-
 
 /* main */
 
-main{
-display: grid;
-grid-auto-flow: column;
-align-items: center;
-justify-content: right;
+main {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: right;
 }
 
-.create-post{
+.create-post {
   display: grid;
   width: 350px;
-  gap: 15px; 
+  gap: 15px;
   position: fixed;
-  left: 70px; 
-  top:20%;
-  background-color:white;
+  left: 70px;
+  top: 20%;
+  background-color: white;
   border: 1px solid #353d1688;
   padding: 50px;
 }
 
-.create-post p{
+.create-post p {
   font-size: 28px;
 }
 
-textarea{
+textarea {
   width: 100%;
   max-width: 500px;
   height: 130px;
@@ -95,12 +91,11 @@ textarea{
 
 /* feed */
 
-.feed{
-padding-top: 70px;
-padding-right: 70px;
-height: 550px;
-overflow-y: scroll;
-
+.feed {
+  padding-top: 70px;
+  padding-right: 70px;
+  height: 550px;
+  overflow-y: scroll;
 }
 
 .user-profile img {
@@ -116,7 +111,7 @@ overflow-y: scroll;
   object-fit: cover;
 }
 
-.user-profile{
+.user-profile {
   display: grid;
   grid-auto-flow: column;
   justify-content: left;
@@ -126,7 +121,7 @@ overflow-y: scroll;
   border-bottom: 1px solid #353d1688;
 }
 
-.post{
+.post {
   display: grid;
   gap: 10px;
   padding: 20px;
@@ -138,7 +133,7 @@ overflow-y: scroll;
 }
 
 .post p {
-width: 500px; 
+  width: 500px;
 }
 
 /* width */
@@ -153,4 +148,13 @@ width: 500px;
 
 ::-webkit-scrollbar-thumb {
   background: #db8a7e;
+}
+
+section {
+  margin-top: 70px;
+}
+
+a{
+  text-decoration: none;
+  color: white; 
 }
