@@ -5,9 +5,12 @@ import { Post } from "../types";
 export function MainPage({currentUser}) {
   const [posts, setPosts] = useState<Post[]>([]);
   useEffect(() => {
-    fetch("http://localhost:5126/posts")
+    if(currentUser){
+      fetch(`http://localhost:5126/posts/${currentUser.id}`)
       .then((resp) => resp.json())
       .then((postsFromServer) => setPosts(postsFromServer));
+    }
+    
   }, []);
 
   return (
