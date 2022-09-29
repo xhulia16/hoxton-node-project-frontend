@@ -267,6 +267,17 @@ object-fit: cover;
   height: fit-content;
 }
 
+.searched-users_list{
+  display: grid;
+  gap: 10px; 
+}
+
+.searched-user{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
 .searched-user img{
 width: 40px; 
 height: 40px; 

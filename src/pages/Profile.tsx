@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { User } from "../types";
 
 type Props = {
@@ -7,10 +8,11 @@ type Props = {
 
 export function Profile({ currentUser }: Props) {
   const [user, setUser] = useState<User | null>(null);
+  const params = useParams();
 
   useEffect(() => {
     if (currentUser) {
-      fetch(`http://localhost:5126/users/${currentUser.id}`)
+      fetch(`http://localhost:5126/users/${params.itemId}`)
         .then((resp) => resp.json())
         .then((data) => {
           if (data.eror) {

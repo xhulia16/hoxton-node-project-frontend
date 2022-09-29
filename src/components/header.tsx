@@ -1,11 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SearchBar } from "../pages/SearchBar";
-import { User } from "../types";
 
-// type Props = {
-//   currentUser: User| null;
-// };
 
 export function Header({ currentUser, signOutUser, filteredUsers, setSearch }) {
  
@@ -15,14 +10,17 @@ export function Header({ currentUser, signOutUser, filteredUsers, setSearch }) {
         <h2 className="title">HOXTALIZING</h2>
       </Link>
       <ul>
-        <li>BOOKMARKS</li>
-        <Link to="/profile">
-          <li>PROFILE</li>
-        </Link>
+      
         {currentUser ? (
+          <>
+            <li>BOOKMARKS</li>
+            <Link to={ `/profile/${currentUser.id}`}>
+              <li>PROFILE</li>
+            </Link>
           <li>
             <button onClick={signOutUser}>LogOut</button>
           </li>
+          </>
         ) : (
           <>
             <Link to="/signIn">

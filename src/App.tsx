@@ -83,7 +83,7 @@ function App() {
      <Route path='/home' element={<MainPage currentUser={currentUser}/>} />
      <Route path='/signIn' element={<SignIn signInUser={signInUser}/>} />
      <Route path='/signUp' element={<SignUp signInUser={signInUser} />} />
-     <Route path='/profile' element={<Profile currentUser={currentUser} />} />
+     <Route path='/profile/:itemId' element={<Profile currentUser={currentUser} />} />
      <Route path='/search' element={<SearchUsers filteredUsers={filteredUsers}/>} />
      <Route path='/home/:itemId' element={<SinglePost currentUser={currentUser}/>} />
      <Route path='*' element={<PageNotFound />} />
