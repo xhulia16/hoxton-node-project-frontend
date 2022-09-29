@@ -10,7 +10,7 @@ import { SinglePost } from "./pages/SinglePost";
 import { User } from "./types";
 import { Profile } from "./pages/Profile";
 
-
+//comment
 
 function App() {
   const [currentUser, setCurrentUser]=useState<User| null>(null)
