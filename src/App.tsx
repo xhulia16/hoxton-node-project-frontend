@@ -9,11 +9,14 @@ import { SignUp } from "./pages/SignUpPage";
 import { SinglePost } from "./pages/SinglePost";
 import { User } from "./types";
 import { Profile } from "./pages/Profile";
+import { SearchUsers } from "./pages/searchedUsers";
 
 //comment
 
 function App() {
-  const [currentUser, setCurrentUser]=useState<User| null>(null)
+  const [currentUser, setCurrentUser]=useState<User| null>(null);
+  const [search, setSearch] = useState("");
+  const [users, setUsers] = useState<User[]>([]);
 
   let navigate= useNavigate()
 
@@ -48,9 +51,32 @@ function App() {
     }
   }, []);
 
+
+
+  window.users=users
+
+  useEffect(() => {
+    fetch("http://localhost:5126/users")
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, [search]);
+
+  // filteredUsers= array that needs to be mapped somewhere
+
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  console.log(filteredUsers)
+
   return (
     <div className="App">
-     <Header currentUser={currentUser} signOutUser={signOutUser}></Header>
+     <Header 
+     currentUser={currentUser} 
+     signOutUser={signOutUser}
+     setSearch={setSearch}
+     filteredUsers={filteredUsers}
+     ></Header>
      <section>
      <Routes>
      <Route index element={<Navigate to='/home' />} />
@@ -58,6 +84,7 @@ function App() {
      <Route path='/signIn' element={<SignIn signInUser={signInUser}/>} />
      <Route path='/signUp' element={<SignUp signInUser={signInUser} />} />
      <Route path='/profile' element={<Profile currentUser={currentUser} />} />
+     <Route path='/search' element={<SearchUsers filteredUsers={filteredUsers}/>} />
      <Route path='/home/:itemId' element={<SinglePost currentUser={currentUser}/>} />
      <Route path='*' element={<PageNotFound />} />
      </Routes>

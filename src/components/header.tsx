@@ -3,29 +3,12 @@ import { Link } from "react-router-dom";
 import { SearchBar } from "../pages/SearchBar";
 import { User } from "../types";
 
-type Props = {
-  currentUser: User;
-};
-export function Header({ currentUser, signOutUser }: Props) {
-  const [search, setSearch] = useState("");
-  const [users, setUsers] = useState<User[]>([]);
+// type Props = {
+//   currentUser: User| null;
+// };
 
-  window.users=users
-
-  useEffect(() => {
-    fetch("http://localhost:5126/users")
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, [search]);
-
-  // filteredUsers= array that needs to be mapped somewhere
-  
-  const filteredUsers = users.filter((user) =>
-    user.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  console.log(filteredUsers)
-
+export function Header({ currentUser, signOutUser, filteredUsers, setSearch }) {
+ 
   return (
     <header>
       <Link to="/home">
@@ -52,6 +35,10 @@ export function Header({ currentUser, signOutUser }: Props) {
         )}
         <li className="contact-us">CONTACT US</li>
         <SearchBar setSearch={setSearch} />
+        {filteredUsers? <div>
+          <h2>TEST</h2>
+        </div>: null}
+        
       </ul>
     </header>
   );
