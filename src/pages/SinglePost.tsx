@@ -41,6 +41,7 @@ type Likes = {
 
 export function SinglePost() {
   const [singlePost, setSinglePost] = useState(null);
+  const [users, setusers] = useState<User | null>(null);
   const params = useParams();
 
   useEffect(() => {

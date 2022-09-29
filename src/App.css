@@ -6,7 +6,7 @@
 }
 
 .App {
-  background-image: url("https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://images.pexels.com/photos/4792503/pexels-photo-4792503.jpeg?auto=compress&cs=tinysrgb&w=600");
   min-height: 100vh;
 }
 
@@ -157,36 +157,35 @@ section {
   justify-content: center;
 }
 
-a{
+a {
   text-decoration: none;
-  color: white; 
+  color: white;
 }
 
 /* sign in form */
-.sign-in button{
+.sign-in button {
   width: 80px;
   justify-self: center;
 }
 
-.feed a{
+.feed a {
   color: black;
 }
 
-.singlePost{
+.singlePost {
   margin-top: 0%;
   display: grid;
- grid-auto-flow: column;
- justify-content: center;
- width: fit-content;
- align-items: flex-start;
- align-content: flex-start;
- gap: 60px;
+  grid-auto-flow: column;
+  justify-content: center;
+  width: fit-content;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 60px;
 }
 
-.post-stats{
+.post-stats {
   background-color: white;
   height: 480px;
   width: 300px;
   justify-content: left;
-  
 }
