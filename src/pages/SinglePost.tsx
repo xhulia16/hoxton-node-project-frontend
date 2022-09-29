@@ -56,7 +56,8 @@ export function SinglePost({ currentUser }: Props) {
           ❤️ {singlePost.likes.length} likes
         </button>
         <div className="comment">
-          <form className="comment-form"
+          <form
+            className="comment-form"
             onSubmit={(event) => {
               event.preventDefault();
 
@@ -95,8 +96,9 @@ export function SinglePost({ currentUser }: Props) {
             <li className="singleComment">
               <img src={item.user.image} className="user-image_comment"></img>
               <h4>{item.user.name}</h4>
+
               <p>{item.comment}</p>
-              </li>
+            </li>
           ))}
         </ul>
       </div>
