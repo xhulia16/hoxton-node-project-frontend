@@ -6,12 +6,12 @@
 }
 
 .App {
-  background-image: url("https://images.pexels.com/photos/4792503/pexels-photo-4792503.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-image: url("https://images.pexels.com/photos/13581883/pexels-photo-13581883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   min-height: 100vh;
 }
 
 button {
-  background-color: rgb(250, 137, 8);
+  background-color: rgb(231, 185, 128);
   border: 1px solid black;
   padding: 5px;
 }
@@ -74,7 +74,6 @@ form {
   height: fit-content;
   margin-top: 60px;
 }
-
 
 .create-post p {
   font-size: 28px;
@@ -194,8 +193,7 @@ a {
   align-content: flex-start;
 }
 
-
-.comment-form{
+.comment-form {
   display: grid;
   width: 300px;
   border: none;
@@ -203,19 +201,18 @@ a {
   margin: 0;
 }
 
-.comment{
+.comment {
   display: grid;
   align-items: flex-start;
 }
 
-.comments-list{
-display: grid;
-gap: 5px;
-overflow-y: scroll;
+.comments-list {
+  display: grid;
+  gap: 5px;
+  overflow-y: scroll;
 }
 
-
-.singleComment{
+.singleComment {
   display: grid;
   grid-auto-flow: column;
   gap: 5px;
@@ -223,7 +220,7 @@ overflow-y: scroll;
   border-bottom: 1px solid black;
 }
 
-.user-image_comment{
+.user-image_comment {
   width: 30px;
   height: 30px;
   object-fit: cover;
@@ -232,47 +229,45 @@ overflow-y: scroll;
 
 /* user profile */
 
-.profile{
+.profile {
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
   gap: 80px;
 }
 
-
-
-.profile_user-details img{
-  width: 100px; 
+.profile_user-details img {
+  width: 100px;
   height: 100px;
   object-fit: cover;
 }
 
-.users-posts img{
-width: 500px; 
-height:400px;
-object-fit: cover;
+.users-posts img {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
 }
 
-.hello-user{
-  width:50px;
-  height:50px;
+.hello-user {
+  width: 50px;
+  height: 50px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.like-button{
+.like-button {
   background-color: white;
-  border: none; 
+  border: none;
   width: fit-content;
   height: fit-content;
 }
 
-.searched-users_list{
+.searched-users_list {
   display: grid;
-  gap: 10px; 
+  gap: 10px;
 }
 
-.searched-user{
+.searched-user {
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -302,4 +297,15 @@ border-radius: 50%;
 width: 60px; 
 height:60px; 
 object-fit: cover;
+}
+
+
+.search {
+  width: 150px;
+  margin: auto;
+  border-radius: 20px;
+  color: white;
+  background-color: rgb(58, 75, 126);
+  border: none;
+  padding: 0.3rem;
 }
