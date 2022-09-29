@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 
 type User = {
@@ -72,15 +72,44 @@ export function SinglePost() {
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify({ postId: post.id }),
-            }).then(() => {});
+              body: JSON.stringify({
+                userId: user.id,
+                postId: post.id,
+              }),
+            });
           }}
         >
           ❤️
         </button>
         <p>{singlePost.likes.length}</p>
+        <div className="comment">
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+
+              let newComment = {
+                userid: number,
+                postId: singlePost.id,
+                comment: event.target.comment.value,
+              };
+
+              fetch(`http://localhost:5126/comments`, {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(newComment),
+              })
+                .then((res) => res.json())
+                .then((commentsFromDb) => setSinglePost(commentsFromDb));
+              event.target.reset();
+            }}
+          >
+            <input name="comment" placeholder="enter your comment"></input>
+            <button>Submit</button>
+          </form>
+        </div>
         <ul>
-          {" "}
           Comments:
           {singlePost.comments.reverse().map((item) => (
             <li>{item.comment}</li>
