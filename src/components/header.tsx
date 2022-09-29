@@ -8,7 +8,9 @@ export function Header({currentUser, signOutUser}){
         </Link>
         <ul>
           <li>BOOKMARKS</li>
+          <Link to="/profile">
           <li>PROFILE</li> 
+          </Link>
           {currentUser? (<li><button onClick={signOutUser}>LogOut</button></li>): 
           (<>
           <Link to="/signIn">

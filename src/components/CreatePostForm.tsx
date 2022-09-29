@@ -1,3 +1,5 @@
+
+
 export function CreatePostForm({currentUser, setPosts}){
   if(currentUser===null)
   return <h1>loading...</h1>

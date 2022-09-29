@@ -75,6 +75,7 @@ form {
   margin-top: 60px;
 }
 
+
 .create-post p {
   font-size: 28px;
 }
@@ -184,8 +185,85 @@ a {
 }
 
 .post-stats {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
   background-color: white;
   height: 480px;
   width: 300px;
-  justify-content: left;
+  align-content: flex-start;
 }
+
+
+.comment-form{
+  display: grid;
+  width: 300px;
+  border: none;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.comment{
+  display: grid;
+  align-items: flex-start;
+}
+
+.comments-list{
+display: grid;
+gap: 5px;
+overflow-y: scroll;
+}
+
+
+.singleComment{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.user-image_comment{
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* user profile */
+
+.profile{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 80px;
+}
+
+
+
+.profile_user-details img{
+  width: 100px; 
+  height: 100px;
+  object-fit: cover;
+}
+
+.users-posts img{
+width: 500px; 
+height:400px;
+object-fit: cover;
+}
+
+.hello-user{
+  width:50px;
+  height:50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.like-button{
+  background-color: white;
+  border: none; 
+  width: fit-content;
+  height: fit-content;
+}
+

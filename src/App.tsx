@@ -8,6 +8,7 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { SignUp } from "./pages/SignUpPage";
 import { SinglePost } from "./pages/SinglePost";
 import { User } from "./types";
+import { Profile } from "./pages/Profile";
 
 
 
@@ -19,7 +20,7 @@ function App() {
   function signInUser(data: any){
     setCurrentUser(data.user)
     localStorage.token=data.token
-    // navigate('/home')
+    navigate('/home')
   }
 
   function signOutUser(){
@@ -56,6 +57,7 @@ function App() {
      <Route path='/home' element={<MainPage currentUser={currentUser}/>} />
      <Route path='/signIn' element={<SignIn signInUser={signInUser}/>} />
      <Route path='/signUp' element={<SignUp signInUser={signInUser} />} />
+     <Route path='/profile' element={<Profile currentUser={currentUser} />} />
      <Route path='/home/:itemId' element={<SinglePost currentUser={currentUser}/>} />
      <Route path='*' element={<PageNotFound />} />
      </Routes>

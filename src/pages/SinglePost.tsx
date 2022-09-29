@@ -2,16 +2,15 @@ import { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Post, User } from "../types";
 
-type Props={
-  currentUser: User
-}
+type Props = {
+  currentUser: User | null;
+};
 
-export function SinglePost({currentUser}: Props) {
+export function SinglePost({ currentUser }: Props) {
   const [singlePost, setSinglePost] = useState<Post | null>(null);
-  // const [users, setusers] = useState<User | null>(null);
   const params = useParams();
 
-  window.singlePost=singlePost
+  window.singlePost = singlePost;
 
   useEffect(() => {
     fetch(`http://localhost:5126/specificpost/${params.itemId}`)
@@ -34,8 +33,10 @@ export function SinglePost({currentUser}: Props) {
           <img className="post-image" src={singlePost.image}></img>
         </div>
       </div>
+
       <div className="post-stats">
         <button
+          className="like-button"
           onClick={() => {
             fetch(`http://localhost:5126/likeposts`, {
               method: "POST",
@@ -43,19 +44,19 @@ export function SinglePost({currentUser}: Props) {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
+                //@ts-ignore
                 userId: currentUser.id,
                 postId: singlePost.id,
               }),
             })
-            .then(resp=>resp.json())
-            .then(data=>setSinglePost(data))
+              .then((resp) => resp.json())
+              .then((data) => setSinglePost(data));
           }}
         >
-          ❤️
+          ❤️ {singlePost.likes.length} likes
         </button>
-        <p>{singlePost.likes.length}</p>
         <div className="comment">
-          <form
+          <form className="comment-form"
             onSubmit={(event) => {
               event.preventDefault();
 
@@ -64,7 +65,7 @@ export function SinglePost({currentUser}: Props) {
                 postId: singlePost.id,
                 comment: event.target.comment.value,
               };
-console.log(newComment)
+              console.log(newComment);
               fetch(`http://localhost:5126/comments`, {
                 method: "POST",
                 headers: {
@@ -74,27 +75,28 @@ console.log(newComment)
               })
                 .then((res) => res.json())
                 .then((data) => {
-                  if(data.error){
-                    console.log(data.error)
-                  }
-                  else{
-                    setSinglePost(data)
+                  if (data.error) {
+                    console.log(data.error);
+                  } else {
+                    setSinglePost(data);
                   }
                 });
-               
-                event.target.reset();
+
+              event.target.reset();
             }}
           >
             <input name="comment" placeholder="enter your comment"></input>
-            <button onClick={()=>{
-
-            }}>Submit</button>
+            <button onClick={() => {}}>Submit</button>
           </form>
         </div>
-        <ul>
+        <ul className="comments-list">
           Comments:
           {singlePost.comments.reverse().map((item) => (
-            <li>{item.comment}</li>
+            <li className="singleComment">
+              <img src={item.user.image} className="user-image_comment"></img>
+              <h4>{item.user.name}</h4>
+              <p>{item.comment}</p>
+              </li>
           ))}
         </ul>
       </div>
