@@ -13,7 +13,9 @@ export function Header({ currentUser, signOutUser, filteredUsers, setSearch }) {
       
         {currentUser ? (
           <>
+          <Link to='/bookmarks'>
             <li>BOOKMARKS</li>
+            </Link>
             <Link to={ `/profile/${currentUser.id}`}>
               <li>PROFILE</li>
             </Link>
@@ -33,9 +35,6 @@ export function Header({ currentUser, signOutUser, filteredUsers, setSearch }) {
         )}
         <li className="contact-us">CONTACT US</li>
         <SearchBar setSearch={setSearch} />
-        {filteredUsers? <div>
-          <h2>TEST</h2>
-        </div>: null}
         
       </ul>
     </header>

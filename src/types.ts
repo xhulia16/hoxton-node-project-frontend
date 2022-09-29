@@ -8,6 +8,7 @@ export type User = {
     likes: number;
     followers: Follows[];
     following: Follows[];
+    Bookmarks: Bookmark[]
   };
   
   export type Post = {
@@ -20,6 +21,7 @@ export type User = {
     posts: Post[];
     comments: Comment[];
     likes: Likes[];
+    Bookmarks: Bookmark[]
   };
   
   export type Comment = {
@@ -40,4 +42,11 @@ export type User = {
     id: number, 
     followerId: number, 
     followingId: number
+  }
+
+  export type Bookmark={
+    id: number, 
+    userId: number, 
+    postId: number
+    post: Post
   }
