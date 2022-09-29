@@ -1,48 +1,17 @@
 import { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Post, User } from "../types";
 
-type User = {
-  id: number;
-  name: string;
-  image: string;
-  password: string;
-  posts: Post[];
-  comments: Comment[];
-  likes: number;
-};
+type Props={
+  currentUser: User
+}
 
-type Post = {
-  id: number;
-  name: string;
-  content: string;
-  image: string;
-  password: string;
-  posts: Post[];
-  comments: Comment[];
-  likes: Likes[];
-};
-
-type Comment = {
-  id: number;
-  comment: Comment[];
-  user: User[];
-  post: Post[];
-  userId: number;
-  postId: number;
-};
-type Likes = {
-  id: number;
-  user: User[];
-  userId: number;
-  postId: number;
-};
-
-//  kam pershtypjen se na duhet nje state users, por nk po e ebej se nk e di ca ideje ke ti, se pavaersisht se i bera types dalin me te kuqe
-
-export function SinglePost() {
-  const [singlePost, setSinglePost] = useState(null);
-  const [users, setusers] = useState<User | null>(null);
+export function SinglePost({currentUser}: Props) {
+  const [singlePost, setSinglePost] = useState<Post | null>(null);
+  // const [users, setusers] = useState<User | null>(null);
   const params = useParams();
+
+  window.singlePost=singlePost
 
   useEffect(() => {
     fetch(`http://localhost:5126/specificpost/${params.itemId}`)
@@ -68,16 +37,18 @@ export function SinglePost() {
       <div className="post-stats">
         <button
           onClick={() => {
-            fetch(`http://localhost:5126/likes`, {
+            fetch(`http://localhost:5126/likeposts`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                userId: user.id,
-                postId: post.id,
+                userId: currentUser.id,
+                postId: singlePost.id,
               }),
-            });
+            })
+            .then(resp=>resp.json())
+            .then(data=>setSinglePost(data))
           }}
         >
           ❤️
@@ -89,11 +60,11 @@ export function SinglePost() {
               event.preventDefault();
 
               let newComment = {
-                userid: number,
+                userId: currentUser.id,
                 postId: singlePost.id,
                 comment: event.target.comment.value,
               };
-
+console.log(newComment)
               fetch(`http://localhost:5126/comments`, {
                 method: "POST",
                 headers: {
@@ -102,12 +73,22 @@ export function SinglePost() {
                 body: JSON.stringify(newComment),
               })
                 .then((res) => res.json())
-                .then((commentsFromDb) => setSinglePost(commentsFromDb));
-              event.target.reset();
+                .then((data) => {
+                  if(data.error){
+                    console.log(data.error)
+                  }
+                  else{
+                    setSinglePost(data)
+                  }
+                });
+               
+                event.target.reset();
             }}
           >
             <input name="comment" placeholder="enter your comment"></input>
-            <button>Submit</button>
+            <button onClick={()=>{
+
+            }}>Submit</button>
           </form>
         </div>
         <ul>

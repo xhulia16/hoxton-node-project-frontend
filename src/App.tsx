@@ -7,10 +7,12 @@ import { MainPage } from "./pages/MainPage";
 import { PageNotFound } from "./pages/PageNotFound";
 import { SignUp } from "./pages/SignUpPage";
 import { SinglePost } from "./pages/SinglePost";
+import { User } from "./types";
+
 
 
 function App() {
-  const [currentUser, setCurrentUser]=useState(null)
+  const [currentUser, setCurrentUser]=useState<User| null>(null)
 
   let navigate= useNavigate()
 
@@ -54,7 +56,7 @@ function App() {
      <Route path='/home' element={<MainPage currentUser={currentUser}/>} />
      <Route path='/signIn' element={<SignIn signInUser={signInUser}/>} />
      <Route path='/signUp' element={<SignUp signInUser={signInUser} />} />
-     <Route path='/home/:itemId' element={<SinglePost />} />
+     <Route path='/home/:itemId' element={<SinglePost currentUser={currentUser}/>} />
      <Route path='*' element={<PageNotFound />} />
      </Routes>
      </section>
