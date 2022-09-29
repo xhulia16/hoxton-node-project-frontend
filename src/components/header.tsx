@@ -33,7 +33,6 @@ export function Header({ currentUser, signOutUser, filteredUsers, setSearch }) {
             </Link>
           </>
         )}
-        <li className="contact-us">CONTACT US</li>
         <SearchBar setSearch={setSearch} />
         
       </ul>
