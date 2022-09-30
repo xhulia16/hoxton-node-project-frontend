@@ -6,13 +6,14 @@
 }
 
 .App {
-  background-image: url("https://images.pexels.com/photos/13581883/pexels-photo-13581883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://images.pexels.com/photos/1710795/pexels-photo-1710795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   min-height: 100vh;
 }
 
 button {
   background-color: rgb(231, 185, 128);
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border: none;
   padding: 5px;
 }
 
@@ -24,7 +25,7 @@ header {
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
-  background-color: rgb(41, 50, 77);
+  background-color: rgb(37, 53, 100);
   padding-left: 50px;
   height: 50px;
   position: fixed;
@@ -288,4 +289,10 @@ a {
   background-color: rgb(58, 75, 126);
   border: none;
   padding: 0.3rem;
+}
+.input-email {
+  border: none;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: none;
 }
