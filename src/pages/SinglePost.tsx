@@ -6,6 +6,7 @@ type Props = {
   currentUser: User | null;
 };
 
+// /test
 export function SinglePost({ currentUser }: Props) {
   const [singlePost, setSinglePost] = useState<Post | null>(null);
   const params = useParams();
