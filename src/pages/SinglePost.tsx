@@ -112,7 +112,11 @@ export function SinglePost({ currentUser }: Props) {
               event.target.reset();
             }}
           >
-            <input name="comment" placeholder="enter your comment"></input>
+            <input
+              className="input-email"
+              name="comment"
+              placeholder="enter your comment"
+            ></input>
             <button onClick={() => {}}>Submit</button>
           </form>
         </div>

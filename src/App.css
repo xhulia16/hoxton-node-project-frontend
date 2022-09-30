@@ -6,10 +6,12 @@
 }
 
 .App {
-  background-image: url("https://images.pexels.com/photos/1710795/pexels-photo-1710795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://images.pexels.com/photos/8516695/pexels-photo-8516695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   min-height: 100vh;
 }
-
+.searched-user {
+  color: black;
+}
 button {
   background-color: rgb(231, 185, 128);
   /* border: 1px solid black; */
@@ -274,32 +276,31 @@ a {
   align-items: center;
 }
 
-.searched-user img{
-width: 40px; 
-height: 40px; 
-object-fit: cover;
-border-radius: 50%;
+.searched-user img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-
-.bookmarks-list{
+.bookmarks-list {
   display: grid;
-  gap: 15px;
+  gap: 30px;
+  margin-top: 30px;
 }
 
-.bookmarks{
+.bookmarks {
   display: grid;
   grid-auto-flow: column;
   justify-content: left;
   gap: 10px;
   align-items: center;
 }
-.bookmarks img{
-width: 60px; 
-height:60px; 
-object-fit: cover;
+.bookmarks img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
 }
-
 
 .search {
   width: 150px;
@@ -315,4 +316,5 @@ object-fit: cover;
   border-radius: 20px;
   padding: 5px;
   background-color: none;
+  /* border: 1px solid blue; */
 }

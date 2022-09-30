@@ -1,6 +1,7 @@
-export function SignUp({signInUser}) {
+export function SignUp({ signInUser }) {
   return (
-    <form className="sign-in"
+    <form
+      className="sign-in"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -16,8 +17,9 @@ export function SignUp({signInUser}) {
             "content-type": "application/json",
           },
           body: JSON.stringify(user),
-        }).then((resp) => resp.json())
-        .then((data) => {
+        })
+          .then((resp) => resp.json())
+          .then((data) => {
             if (data.error) {
               alert(data.error);
             } else {
@@ -27,10 +29,23 @@ export function SignUp({signInUser}) {
 
         console.log(user);
       }}
-    > <h2> Please enter your details to sign up</h2>
-      <input name="name" placeholder="insert your full name" required></input>
-      <input name="email" placeholder="insert your email" required></input>
+    >
+      {" "}
+      <h2> Please enter your details to sign up</h2>
       <input
+        className="input-email"
+        name="name"
+        placeholder="insert your full name"
+        required
+      ></input>
+      <input
+        className="input-email"
+        name="email"
+        placeholder="insert your email"
+        required
+      ></input>
+      <input
+        className="input-email"
         name="password"
         type="password"
         placeholder="insert your password"
