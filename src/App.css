@@ -27,7 +27,7 @@ header {
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
-  background-color: rgb(178, 210, 178);
+  background-color: rgb(59, 110, 59);
   padding-left: 50px;
   height: 50px;
   position: fixed;
