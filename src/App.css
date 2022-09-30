@@ -27,7 +27,7 @@ header {
   grid-auto-flow: column;
   align-items: center;
   justify-content: stretch;
-  background-color: rgb(37, 53, 100);
+  background-color: rgb(178, 210, 178);
   padding-left: 50px;
   height: 50px;
   position: fixed;
@@ -151,7 +151,7 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(58, 75, 126);
+  background: rgb(178, 210, 178);
 }
 
 section {
@@ -307,7 +307,7 @@ a {
   margin: auto;
   border-radius: 20px;
   color: white;
-  background-color: rgb(58, 75, 126);
+  background-color: rgb(178, 210, 178);
   border: none;
   padding: 0.3rem;
 }
