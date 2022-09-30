@@ -12,12 +12,8 @@ export function Header({ currentUser, signOutUser, filteredUsers, setSearch }) {
           <>
           <Link to='/bookmarks'>
             <li>BOOKMARKS</li>
-<<<<<<< HEAD
-            <Link to={`/profile/${currentUser.id}`}>
-=======
             </Link>
             <Link to={ `/profile/${currentUser.id}`}>
->>>>>>> 4c1c6a1fa4f12d55d68e6a9bc9b3d00fa49a4793
               <li>PROFILE</li>
             </Link>
             <li>
@@ -35,11 +31,7 @@ export function Header({ currentUser, signOutUser, filteredUsers, setSearch }) {
           </>
         )}
         <SearchBar setSearch={setSearch} />
-<<<<<<< HEAD
-        {filteredUsers ? <div>{/* <h2>TEST</h2> */}</div> : null}
-=======
         
->>>>>>> 4c1c6a1fa4f12d55d68e6a9bc9b3d00fa49a4793
       </ul>
     </header>
   );
