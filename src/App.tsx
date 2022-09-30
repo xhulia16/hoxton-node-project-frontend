@@ -10,6 +10,7 @@ import { SinglePost } from "./pages/SinglePost";
 import { User } from "./types";
 import { Profile } from "./pages/Profile";
 import { SearchUsers } from "./pages/searchedUsers";
+import { Bookmarks } from "./pages/Bookmarks";
 
 //comment
 
@@ -51,8 +52,6 @@ function App() {
     }
   }, []);
 
-
-
   window.users=users
 
   useEffect(() => {
@@ -86,6 +85,7 @@ function App() {
      <Route path='/profile/:itemId' element={<Profile currentUser={currentUser} />} />
      <Route path='/search' element={<SearchUsers filteredUsers={filteredUsers}/>} />
      <Route path='/home/:itemId' element={<SinglePost currentUser={currentUser}/>} />
+     <Route path='/bookmarks' element={<Bookmarks currentUser={currentUser} />} />
      <Route path='*' element={<PageNotFound />} />
      </Routes>
      </section>

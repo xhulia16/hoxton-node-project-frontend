@@ -35,7 +35,9 @@ export function Profile({ currentUser }: Props) {
         <p>{user.name}</p>
         <p>{user.followers.length} followers</p>
         <p>{user.following.length} following</p>
-        <p></p>
+        {user.id===currentUser?.id? null: 
+        <button>FOLLOW</button>
+        }
       </div>
       <ul className="feed">
         {user.posts.reverse().map(item=>(

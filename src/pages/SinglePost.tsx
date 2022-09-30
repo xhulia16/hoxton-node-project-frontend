@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { Post, User } from "../types";
 
 type Props = {
@@ -9,6 +9,7 @@ type Props = {
 export function SinglePost({ currentUser }: Props) {
   const [singlePost, setSinglePost] = useState<Post | null>(null);
   const params = useParams();
+  let navigate = useNavigate();
 
   window.singlePost = singlePost;
 
@@ -35,6 +36,30 @@ export function SinglePost({ currentUser }: Props) {
       </div>
 
       <div className="post-stats">
+        <button
+          onClick={() => {
+            fetch("http://localhost:5126/bookmarks", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify({
+                userId: currentUser?.id,
+                postId: singlePost.id,
+              }),
+            })
+              .then((resp) => resp.json())
+              .then((data) => {
+                if (data.error) {
+                  console.log(data.error);
+                } else {
+                  navigate("/bookmarks");
+                }
+              });
+          }}
+        >
+          Bookmark
+        </button>
         <button
           className="like-button"
           onClick={() => {
@@ -96,7 +121,6 @@ export function SinglePost({ currentUser }: Props) {
             <li className="singleComment">
               <img src={item.user.image} className="user-image_comment"></img>
               <h4>{item.user.name}</h4>
-
               <p>{item.comment}</p>
             </li>
           ))}
