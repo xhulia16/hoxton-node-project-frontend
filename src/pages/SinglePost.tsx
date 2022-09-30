@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Post, User } from "../types";
 
 type Props = {
